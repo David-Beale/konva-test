@@ -5,6 +5,7 @@
   right: 0;
   display: flex;
   margin-top: 100px;
+  width: 1000px;
 }
 .randomButton {
   width: 50px;
