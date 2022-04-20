@@ -34,7 +34,7 @@ const ScrollBar = ({ viewId, loaded }) => {
         <Layer>
           <Rect
             ref={scrollRef}
-            x={0}
+            x={1}
             y={0}
             height={50}
             width={8}
@@ -42,7 +42,7 @@ const ScrollBar = ({ viewId, loaded }) => {
             cornerRadius={4}
             draggable={true}
             dragBoundFunc={(pos) => {
-              pos.x = 0;
+              pos.x = 1;
               pos.y = Math.max(Math.min(pos.y, MAX), MIN);
               return pos;
             }}

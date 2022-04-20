@@ -28,19 +28,8 @@
 }
 
 .view {
-  position: relative;
   height: 200px;
   width: 500px;
-  position: relative;
   border: 1px solid grey;
-}
-.stage {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.scrollbar {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
 }
