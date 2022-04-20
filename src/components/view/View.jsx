@@ -50,7 +50,7 @@ export default function View({ viewId }) {
       <div className="stage">
         <Stage
           ref={stageRef}
-          width={480}
+          width={490}
           height={200}
           draggable={true}
           onDragMove={onDrag}
