@@ -1,6 +1,6 @@
 import "./App.css";
 import RandomButton from "./components/RandomButton";
-import View from "./components/View";
+import View from "./components/view/View";
 
 function App() {
   return (

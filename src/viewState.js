@@ -1,3 +1,3 @@
 import { proxy } from "valtio";
 
-export const viewState = proxy({ views: {}, cellLookup: {}, rowLookup: {}, count:0 });
+export const viewState = proxy({ views: {}, cellLookup: {}, rowLookup: {} });

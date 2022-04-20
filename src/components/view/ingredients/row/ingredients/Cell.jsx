@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Rect } from "react-konva";
 import { subscribe } from "valtio";
 import { subscribeKey } from "valtio/utils";
-import { viewState } from "../viewState";
+import { viewState } from "../../../../../viewState";
 
 export default function Cell({ viewId, cellId, moveToTop }) {
   const cellRef = useRef();
@@ -30,7 +30,7 @@ export default function Cell({ viewId, cellId, moveToTop }) {
     cell.isDragging = false;
   };
 
-  const animate = useCallback(
+  const animate = useRef(
     (cb) => {
       moveToTop();
       cellRef.current.to({
@@ -59,7 +59,7 @@ export default function Cell({ viewId, cellId, moveToTop }) {
   );
 
   const onClick = () => {
-    animate();
+    animate.current();
   };
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function Cell({ viewId, cellId, moveToTop }) {
         : "red";
       cellRef.current.getLayer().batchDraw();
       if (cell.isClicked) {
-        animate(() => (cell.isClicked = false));
+        animate.current(() => (cell.isClicked = false));
       }
     });
     const unsubscribe2 = subscribeKey(viewState.views[viewId], "scale", () => {
@@ -85,7 +85,7 @@ export default function Cell({ viewId, cellId, moveToTop }) {
       unsubscribe1();
       unsubscribe2();
     };
-  }, [cell, cellId, animate, viewId]);
+  }, [cell, cellId, viewId]);
   return (
     <Rect
       ref={cellRef}

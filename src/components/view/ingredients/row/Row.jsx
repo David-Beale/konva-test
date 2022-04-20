@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { useSnapshot } from "valtio";
-import { viewState } from "../viewState";
-import Cell from "./Cell";
+import { viewState } from "../../../../viewState";
+import Cell from "./ingredients/Cell";
 
 const Row = ({ rowId, viewId }) => {
   const snapshot = useSnapshot(viewState);
